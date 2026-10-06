@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "./styles/premium.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Better — Luxury Hotel design system.
+ * Warm gold accent on deep neutral surfaces.
+ * Fonts loaded via <link> in index.html:
+ *   - Cormorant Garamond (serif, display)
+ *   - Poppins (sans, body)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.2 0.01 60);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.01 60);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.01 60);
+
+  --primary: oklch(0.7 0.11 65);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 60);
+  --secondary-foreground: oklch(0.2 0.01 60);
+  --muted: oklch(0.96 0.01 60);
+  --muted-foreground: oklch(0.5 0.01 60);
+  --accent: oklch(0.94 0.02 70);
+  --accent-foreground: oklch(0.2 0.01 60);
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.9 0.005 60);
+  --input: oklch(0.9 0.005 60);
+  --ring: oklch(0.7 0.11 65);
+
+  /* Brand tokens */
+  --gold: oklch(0.7 0.11 65);
+  --gold-soft: oklch(0.78 0.08 70);
+  --ink: oklch(0.22 0.01 60);          /* dark navy/charcoal for hero */
+  --ink-soft: oklch(0.32 0.008 60);    /* lighter charcoal for inner banners */
+  --cream: oklch(0.97 0.01 80);
+}
+
+.dark {
+  --background: oklch(0.2 0.01 60);
+  --foreground: oklch(0.97 0.005 60);
+  --card: oklch(0.24 0.01 60);
+  --card-foreground: oklch(0.97 0.005 60);
+  --popover: oklch(0.24 0.01 60);
+  --popover-foreground: oklch(0.97 0.005 60);
+  --primary: oklch(0.7 0.11 65);
+  --primary-foreground: oklch(0.15 0.01 60);
+  --secondary: oklch(0.3 0.01 60);
+  --secondary-foreground: oklch(0.97 0.005 60);
+  --muted: oklch(0.3 0.01 60);
+  --muted-foreground: oklch(0.75 0.01 60);
+  --accent: oklch(0.3 0.01 60);
+  --accent-foreground: oklch(0.97 0.005 60);
+  --destructive: oklch(0.7 0.19 22);
+  --destructive-foreground: oklch(0.97 0.005 60);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.7 0.11 65);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+  }
+
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+
+  a {
+    color: #946244;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  a:hover {
+    color: #af9a7d;
+  }
+
+  /* Override Ant Design's light link color reset */
+  :where(.css-dev-only-do-not-override-1vijooz) a {
+    color: #946244 !important;
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--gold);
+  color: white;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: background-color 0.2s ease;
+}
+@utility btn-gold-hover {
+  &:hover { background-color: oklch(0.62 0.11 65); }
+}
+
+@utility btn-outline-ink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 0.85rem 1.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+@utility hx-input {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+@utility hx-input-select {
+  width: 100%;
+  background: white;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  height: 46px;
+}

@@ -1,0 +1,190 @@
+
+/* tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* root css */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 14px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply !font-sans;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: #fdfbf7;
+}
+
+/* Custom Scrollbar for Content */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 6px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: rgba(148, 98, 68, 0.2);
+  border-radius: 10px;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 98, 68, 0.4);
+}
+
+input,
+select,
+button,
+textarea,
+a {
+  border-radius: 6 !important;
+  -webkit-appearance: none;
+}
+
+.eyebrow {
+  @apply font-sans text-[0.72rem] font-normal tracking-[0.35em] uppercase text-color-primary;
+}
+
+/* antd customize start */
+
+.ant-card {
+  @apply !bg-white !rounded-xl !border-gray-50;
+}
+
+.ant-card-head {
+  @apply !border-gray-50 !py-2;
+}
+
+.ant-statistic-title {
+  @apply !font-sans !font-bold !text-[0.65rem] !tracking-[0.1em] !uppercase !text-gray-400 !mb-2;
+}
+
+.ant-btn-primary {
+  @apply text-txt-white bg-color-primary border-color-primary hover:!bg-color-secondary hover:border-color-secondary active:!bg-color-primary disabled:text-txt-grey disabled:bg-bg-gray disabled:border-bg-gray !rounded-lg !h-auto !py-2 !px-6 !font-sans !font-bold !uppercase !tracking-widest !text-[0.75rem] !transition-all !duration-300;
+}
+
+.ant-btn-default {
+  @apply !rounded-lg !h-auto !py-2 !px-6 !font-sans !font-bold !uppercase !tracking-widest !text-[0.75rem] !transition-all !duration-300;
+}
+
+.ant-tag {
+  @apply !rounded-md !px-3 !py-0.5 !border-none !font-sans !font-bold !text-[0.65rem] !tracking-widest;
+}
+
+.ant-divider-horizontal.ant-divider-with-text-center::before,
+.ant-divider-horizontal.ant-divider-with-text-center::after {
+  border-top: 2px solid !important;
+  @apply border-color-primary text-center;
+}
+
+.ant-message-custom-content {
+  @apply inline-flex items-center;
+}
+
+.ant-popover-title {
+  @apply bg-bg-black;
+}
+
+.ant-image-preview-img {
+  margin: auto !important;
+}
+
+.ant-image-preview-img-wrapper img {
+  display: inline !important;
+}
+
+.ant-layout-header {
+  padding-inline: 0 !important;
+}
+
+.ant-tabs-tab {
+  @apply !px-8 !py-4 !m-0 !transition-all !duration-300;
+}
+.ant-tabs-tab-btn {
+  @apply font-serif !text-[1rem] tracking-[0.15em] uppercase !text-gray-400 font-medium;
+}
+.ant-tabs-tab-active .ant-tabs-tab-btn {
+  @apply !text-bg-black !font-bold;
+}
+.ant-tabs-ink-bar {
+  @apply !bg-color-primary !h-[3px];
+}
+.ant-tabs-nav::before {
+  @apply !border-gray-100;
+}
+
+.ant-picker-calendar-date-content {
+  @apply !h-[25px];
+}
+.ant-picker-content thead tr {
+  @apply !h-[40px] border-b-bg-black border-b-2;
+}
+
+/* antd customize end */
+
+/* app components style start */
+
+.page-loader {
+  @apply w-full h-[50vh] flex items-center justify-center z-z-fixed;
+}
+
+.default-transition {
+  @apply transition-all duration-200;
+}
+
+.two-grid-column {
+  @apply flex flex-col items-center justify-center md:flex-row md:justify-between md:space-x-4;
+}
+
+/* app components style end */
+
+/* data table style start */
+
+.table-layout {
+  @apply w-full overflow-hidden bg-white rounded-xl shadow-sm border border-gray-100 my-4;
+}
+.table-layout-container {
+  @apply w-full overflow-x-auto;
+}
+
+.data-table {
+  @apply w-full leading-normal border-spacing-0 border-collapse;
+}
+.data-table-head {
+  @apply bg-[#1a1612] text-left;
+}
+.data-table-head-tr {
+  @apply border-none;
+}
+.data-table-head-tr-th {
+  @apply py-5 px-6 text-[0.65rem] text-white font-sans font-bold uppercase tracking-[0.2em] border-none whitespace-nowrap;
+}
+.data-table-body-tr {
+  @apply transition-colors duration-200 border-b border-gray-50 last:border-none hover:bg-[#fdfbf7];
+}
+.data-table-body-tr-td {
+  @apply py-4 px-6 text-gray-700 text-[0.85rem] font-sans font-medium whitespace-nowrap border-none;
+}
+
+/* data table style end */
+
+/* dashboard components style start */
+
+.logo-box {
+  @apply px-2 py-4 flex flex-row items-center justify-start space-x-2 cursor-pointer;
+}
+
+.user-name {
+  @apply whitespace-nowrap text-txt-white text-[25px] font-text-font font-medium truncate block;
+}
+
+/* dashboard components style end */
